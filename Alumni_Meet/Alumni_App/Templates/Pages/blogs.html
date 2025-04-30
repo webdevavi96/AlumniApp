@@ -5,24 +5,32 @@
     <div class="blog-content">
         <h1 class="text-center text-primary fw-bold" style="font-size: 3rem; margin-top: 15px; margin-bottom: 10px;">
             Blogs Section</h1>
+
+        {% for blog in blogData %}
+
         <div class="col-12">
             <div class="card bg-info text-white mb-3">
                 <div class="card-header">
-                    <h2></h2>
+                    <h2>{{blog.title}}</h2>
                 </div>
                 <div class="card-body d-flex flex-wrap">
                     <div class="col-md-4 card-image">
-                        <img src="" alt="Alumni Portal" class="img-fluid rounded image-hover-effect">
+                        <img src="{{blog.blog_image.url}}" alt="Alumni Portal" class="img-fluid rounded image-hover-effect">
                     </div>
                     <div class="col-md-8 px-1">
-                        <p style="color: black; font-family: 'Times New Roman', Times, serif;"></p>
+                        <p style="color: black; font-family: 'Times New Roman', Times, serif;">
+                            {{blog.content}}
+                        </p>
                         <p class="align-baseline text-end"
                             style="font-family: 'Times New Roman', Times, serif; font-variant-caps: petite-caps; color: darkblue;">
-                            ~ Author</p>
+                            ~ {{blog.author}}</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        {% endfor %}
+
 </section>
 
 {% endblock %}

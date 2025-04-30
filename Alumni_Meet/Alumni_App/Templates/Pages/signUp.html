@@ -9,7 +9,7 @@
                 <p>Join our alumni network and stay connected!</p>
             </div>
             <div class="card-body">
-                <form method="post">
+                <form action="" method="post">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="mb-3" id="branchRow">
                         <label for="branch" class="form-label">Branch</label>
-                        <select class="form-select" id="branch" required>
+                        <select class="form-select" id="branch">
                             <option value="" disabled selected>Select Your Branch</option>
                             <option value="Computer Science and Engineering">Computer Science and Engineering</option>
                             <option value="Electronics Engineering">Electronics Engineering</option>
