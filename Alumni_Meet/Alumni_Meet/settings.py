@@ -134,3 +134,5 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+AUTH_USER_MODEL = 'Alumni_App.CustomUser'
+AUTHENTICATION_BACKENDS = ['Alumni_App.backends.EmailBackend']
