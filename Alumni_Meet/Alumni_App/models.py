@@ -12,7 +12,8 @@ class Alumni(models.Model):
     user_type = models.CharField(max_length=10, choices=[('alumni', 'Alumni'),])
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-
+    password = models.CharField(max_length=100, blank=False, null=False, default="Password123")
+    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     
@@ -25,6 +26,7 @@ class Teacher(models.Model):
     user_type = models.CharField(max_length=10, choices=[('teacher', 'Teacher'),])
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
+    password = models.CharField(max_length=100, blank=False, null=False, default="Password123")
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -40,10 +42,10 @@ class Student(models.Model):
         ('ECE', 'Electronics Engineering'),
         ('EE', 'Electrical Engineering'),
     ])
-    useer_type = models.CharField(max_length=10, choices=[('student', 'Student'),])
+    user_type = models.CharField(max_length=10, choices=[('student', 'Student'),])
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-    
+    password = models.CharField(max_length=100, blank=False, null=False, default="Password123")
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     
