@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
-from Alumni_App import views
+from Alumni_App import views, update_profile_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,9 +28,10 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('login/', views.login, name='login'),
     path('signUp/', views.signUp, name='signUp'),
-    # path('accounts/login/', views.login, name='login'),
+    path('accounts/login/', views.login, name='login'),
     path('accounts/signup/', views.signUp, name='signUp'),
     path('logout/', views.logout, name='logout'),
+    path('update_profile/', update_profile_view.update_profile, name='update_profile'),
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

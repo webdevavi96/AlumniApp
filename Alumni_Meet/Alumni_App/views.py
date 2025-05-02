@@ -41,6 +41,8 @@ def profile(request):
     return render(request, 'pages/profile.html', {'user': user})
 
 
+
+
 def login(request):
     if request.method == "POST":
         email = request.POST.get("email")

@@ -15,6 +15,12 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=15, unique=True, null=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
+    website = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.username
