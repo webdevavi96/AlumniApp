@@ -50,6 +50,7 @@ Ensure you have the following installed:
 ---
 
 ## 📂 **Project Structure**
+```plaintext
 Alumni_Meet/
 ├── Alumni_App/
 │   ├── Templates/         # HTML templates
@@ -65,7 +66,7 @@ Alumni_Meet/
 ├── db.sqlite3             # SQLite database
 ├── [manage.py](http://_vscodecontentref_/1)              # Django management script
 └── [README.md](http://_vscodecontentref_/2)              # Project documentation
-
+````
 
 ---
 
