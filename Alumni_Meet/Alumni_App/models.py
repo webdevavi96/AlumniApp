@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 
 class CustomUser(AbstractUser):
@@ -21,13 +22,25 @@ class CustomUser(AbstractUser):
     instagram = models.URLField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
+    student_id = models.CharField(max_length=10, unique=True, null=True)
+    alumni_id = models.CharField(max_length=10, unique=True, null=True)
+    teacher_id = models.CharField(max_length=10, unique=True, null=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.student_id and self.user_type == 'student':
+            self.student_id = str(uuid.uuid4())[:10]
+        elif not self.alumni_id and self.user_type == 'alumni':
+            self.alumni_id = str(uuid.uuid4())[:10]
+        elif not self.teacher_id and self.user_type == 'teacher':
+            self.teacher_id = str(uuid.uuid4())[:10]
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.username
 
 
 class Alumni(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, default=1)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     def __str__(self):
         return self.user.email
 
@@ -40,7 +53,7 @@ class Teacher(models.Model):
 
 
 class Student(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, default=1)
     branch = models.CharField(max_length=100, choices=[ 
         ('CSE', 'Computer Science and Engineering'), 
         ('ECE', 'Electronics Engineering'), 
@@ -65,6 +78,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     blog_image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+    blog_details = models.TextField(default=list, blank=True, null=True)
     author = models.ForeignKey(Alumni, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 

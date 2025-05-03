@@ -8,7 +8,6 @@ from .models import Blog, Event, Alumni, Teacher, Student, CustomUser
 blogData = Blog.objects.all()
 eventData = Event.objects.all()
 
-# Create your views here.
 
 
 def home(request):
@@ -17,11 +16,13 @@ def home(request):
 
 @login_required
 def blogs(request):
-    return render(request, 'pages/blogs.html', {"blogData": blogData})
+    user = request.user
+    return render(request, 'pages/blogs.html', {"blogData": blogData, 'user': user})
 
 
 @login_required
 def events(request):
+    
     current_datetime = datetime.now()
     for event in eventData:
         event_datetime = datetime.combine(event.date, event.time)
@@ -38,7 +39,9 @@ def events(request):
 @login_required
 def profile(request):
     user = request.user
-    return render(request, 'pages/profile.html', {'user': user})
+    students = Student.objects.all()
+
+    return render(request, 'pages/profile.html', {'user':user, 'students': students})
 
 
 
@@ -97,3 +100,48 @@ def signUp(request):
         return redirect("login")
 
     return render(request, "pages/signUp.html")
+
+
+def details(request, id):
+    try:
+        blog = Blog.objects.get(id=id)
+    except Blog.DoesNotExist:
+        return HttpResponse("Blog not found")
+
+    return render(request, 'pages/details.html', {'blog': blog})
+
+def new_blog(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+        image = request.FILES.get("image")
+
+        blog = Blog.objects.create(
+            title=title,
+            content=content,
+            image=image,
+            author=request.user
+        )
+        return redirect("blogs")
+
+    return render(request, 'pages/new_blog.html')
+
+def new_event(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        date = request.POST.get("date")
+        time = request.POST.get("time")
+        image = request.FILES.get("image")
+
+        event = Event.objects.create(
+            title=title,
+            description=description,
+            date=date,
+            time=time,
+            image=image,
+            author=request.user
+        )
+        return redirect("events")
+
+    return render(request, 'pages/new_event.html')
