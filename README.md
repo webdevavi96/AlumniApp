@@ -1,9 +1,11 @@
-# 🎓 **Alumni Meet**  
+# 🎓 **Alumni Meet**
+
 A Django-based web application for connecting alumni, students, and teachers. This platform fosters collaboration, networking, and engagement among the academic community.
 
 ---
 
 ## 🌟 **Features**
+
 - 📝 **Blogs**: Alumni and teachers can share their experiences and insights through blogs.
 - 🎉 **Events**: Stay updated with upcoming, ongoing, and past events.
 - 👤 **User Profiles**: Manage detailed profiles for alumni, students, and teachers.
@@ -13,6 +15,7 @@ A Django-based web application for connecting alumni, students, and teachers. Th
 ---
 
 ## 🛠️ **Tech Stack**
+
 - **Backend**: Django 5.2 🐍
 - **Frontend**: HTML5, CSS3, Bootstrap 5 🎨
 - **Database**: SQLite 📂
@@ -23,33 +26,41 @@ A Django-based web application for connecting alumni, students, and teachers. Th
 ## 🚀 **Getting Started**
 
 ### Prerequisites
+
 Ensure you have the following installed:
+
 - Python 3.10+ 🐍
 - Django 5.2
 - pip (Python package manager)
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-repo/alumni-meet.git
    cd alumni-meet
    ```
-2. Setting up the Project:
-    ```bash
 
-    pip install -r requirements.txt
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
+2. Setting up the Project:
+
+   ```bash
+   pip install -r requirements.txt
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
 3. Now run the server:
-    ```bash
-    python manage.py runserver
-    http://127.0.0.1:8000/
-    ```
+
+   ```bash
+   python manage.py runserver
+   http://127.0.0.1:8000/
+   ```
 
 ---
 
 ## 📂 **Project Structure**
+
 ```plaintext
 Alumni_Meet/
 ├── Alumni_App/
@@ -64,52 +75,76 @@ Alumni_Meet/
 │   ├── urls.py            # URL routing
 │   └── ...
 ├── db.sqlite3             # SQLite database
-├── [manage.py](http://_vscodecontentref_/1)              # Django management script
-└── [README.md](http://_vscodecontentref_/2)              # Project documentation
-````
+├── manage.py              # Django management script
+└── README.md              # Project documentation
+```
 
 ---
 
-📸 Screenshots
-<img alt="Home Page" src="https://via.placeholder.com/800x400?text=Home+Page">
-Profile Page
-<img alt="Profile Page" src="https://via.placeholder.com/800x400?text=Profile+Page">
+## 📸 **Screenshots**
 
-The screenshots will available soon...
+### Home Page
+
+![Home Page](https://via.placeholder.com/800x400?text=Home+Page)
+
+### Profile Page
+
+![Profile Page](https://via.placeholder.com/800x400?text=Profile+Page)
+
+> **Note**: Screenshots will be updated soon.
 
 ---
 
-🧑‍💻 Contributing
+## 🧑‍💻 **Contributing**
+
 We welcome contributions! Follow these steps to contribute:
 
 1. Fork the repository.
 2. Create a new branch:
-    ```bash
-    git checkout -b feature-name
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m "Add feature-name"
-    ```
-4. Push to your branch:
+
    ```bash
-     git push origin feature-name
+   git checkout -b feature-name
    ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+
+4. Push to your branch:
+
+   ```bash
+   git push origin feature-name
+   ```
+
 5. Open a pull request.
 
 ---
 
-🛡️ License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## 🛡️ **License**
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
-📞 Contact
+
+## 📞 **Contact**
+
 For any inquiries or support, reach out to:
 
-<li><a href="mailto:mmitmaharaj2016@gmail.com" target="_blank">📧 Email</a> </li>
-<li><a href="https://www.mmitgp.ac.in" target="_blank">🌐 Mahamaya IT Polytechnic</a></li>
+- 📧 [Email](mailto:mmitmaharaj2016@gmail.com)
+- 🌐 [Mahamaya IT Polytechnic](https://www.mmitgp.ac.in)
 
 ---
-⭐ Acknowledgments
-Special thanks to my Team and the Mahamaya IT Polytechnic community for their support and inspiration.
 
+## ⭐ **Acknowledgments**
+
+Special thanks to my team and the Mahamaya IT Polytechnic community for their support and inspiration.
+
+---
+
+## 💬 **Developer's Message**
+
+This is a solo project. If anyone has ideas for new features or improvements, feel free to contact me via email:
+
+📧 [avinashchaurasiya901@gmail.com](mailto:avinashchaurasiya901@gmail.com)
