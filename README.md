@@ -130,7 +130,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## 📞 **Contact**
 
-For any inquiries or support, reach out to:
+For any inquiries or support about institute, reach out to:
 
 - 📧 [Email](mailto:mmitmaharaj2016@gmail.com)
 - 🌐 [Mahamaya IT Polytechnic](https://www.mmitgp.ac.in)
